@@ -37,12 +37,17 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 </p>
 <p>
 Install / Enable IIS in Windows with CGI
+	
 - World Wide Web Services -> Application Development Features ->
-[X] CGI
-[X] Common HTTP Features
-- AND IIS Management Console
-Internet Information Services -> Web Management Tools -> IIS Management Console
-	[X] IIS Management Console
+-  [X] CGI
+- [X] Common HTTP Features
+
+AND IIS Management Console
+
+- Internet Information Services -> Web Management Tools -> IIS Management Console
+- [X] IIS Management Console
+<img width="242" alt="image" src="https://github.com/jckjr21/osticket-prereqs/assets/142818746/51b650a1-582d-4d26-a448-6002068b3e2e">
+
 
 
 
@@ -54,9 +59,22 @@ Internet Information Services -> Web Management Tools -> IIS Management Console
 <img width="361" alt="image" src="https://github.com/jckjr21/osticket-prereqs/assets/142818746/07f57816-9e43-4201-9cf2-e47d61f021b7">
 
 </p>
+
+Download and Install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
+
+- Typical Setup ->
+  
+- Launch Configuration Wizard (after install) ->
+
+- Standard Configuration ->
+  
+- Password1
+
+  <img width="361" alt="image" src="https://github.com/jckjr21/osticket-prereqs/assets/142818746/a876395e-d3b8-4bb2-bd11-233f59502f78">
+
+
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
+
 <br />
 
 <p>
@@ -64,6 +82,55 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Install osTicket v1.15.8
+	
+- Download osTicket from the Installation Files Folder
+
+- Extract and copy “upload” folder to c:\inetpub\wwwroot
+Within c:\inetpub\wwwroot, Rename “upload” to “osTicket”
+
+
+Reload IIS (Open IIS, Stop and Start the server)
+
+
+- Go to sites -> Default -> osTicket
+On the right, click “Browse *:80”
+(Note that some extensions are not enabled)
+
+
+- Go back to IIS, sites -> Default -> osTicket
+
+
+- Double-click PHP Manager
+
+  
+- Click “Enable or disable an extension”
+
+
+- Enable: php_imap.dll
+
+- Enable: php_intl.dll
+
+- Enable: php_opcache.dll
+
+- Refresh the osTicket site in your browse, observe the changes
+
+Rename: ost-config.php
+
+- From: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
+  
+- To: C:\inetpub\wwwroot\osTicket\include\ost-config.php
+
+Assign Permissions: ost-config.php
+
+
+- Disable inheritance -> Remove All
+
+
+- New Permissions -> Everyone -> All
+
+<img width="361" alt="image" src="https://github.com/jckjr21/osticket-prereqs/assets/142818746/4bf7c715-0e3b-4e87-8eb4-ccd9bf04a91e">
+
+
 </p>
 <br />
